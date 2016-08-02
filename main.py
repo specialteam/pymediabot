@@ -61,10 +61,5 @@ def aparat(m):
     res = urllib.urlopen(url)
     urllib.urlretrieve("{}".format(url), "aaa.png")
     bot.send_photo(m.chat.id, open('aaa.jpg'), caption="در کانال ما عضو بشید @specialteam_ch \n good luck...")
-@bot.message_handler(commands=['qr'])
-def code(message):
-    text = message.text.split()[1]
-    urllib.urlretrieve("https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl={}".format(text), 'qr.jpg')
-    bot.send_photo(message.chat.id, open('qr.jpg'))
 
 bot.polling(True)
